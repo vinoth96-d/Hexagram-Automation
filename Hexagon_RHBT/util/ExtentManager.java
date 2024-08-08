@@ -1,0 +1,31 @@
+package com.Hexagon.pom.util;
+
+//http://relevantcodes.com/Tools/ExtentReports2/javadoc/index.html?com/relevantcodes/extentreports/ExtentReports.html
+
+
+import java.io.File;
+import java.util.Date;
+
+import com.relevantcodes.extentreports.DisplayOrder;
+import com.relevantcodes.extentreports.ExtentReports;
+
+public class ExtentManager {
+    private static ExtentReports extent;
+
+    public static ExtentReports getInstance() {
+        if (extent == null) {
+            Date d = new Date();
+            //String fileName = d.toString().replace(":", "_").replace(" ", "_") + ".html";
+            String fileName="Hexagon"+".html";
+
+            String reportPath = Constants.REPORTS_PATH + fileName;
+
+            extent = new ExtentReports(reportPath, true, DisplayOrder.OLDEST_FIRST);
+            extent.loadConfig(new File(System.getProperty("user.dir") + "/config/ReportsConfig.xml"));
+            // optional
+            extent.addSystemInfo("Selenium Version", "4.0").addSystemInfo(
+                    "Environment", Constants.ENV).addSystemInfo("Qa","Baburaj");
+        }
+        return extent;
+    }
+}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
+    <classes>
+      <class name="com.Hexagon.pom.testcases.MoneyMarket_EarlyMaturity_MultiCurrency.MM_Full_BackDate_ChangeINT">
+        <methods>
+          <include name="tearDown"/>
+          <include name="Create_DepositPlacement"/>
+          <include name="closeBrowserWindows"/>
+          <include name="stopReport"/>
+          <include name="sendmail"/>
+          <include name="prepareReport"/>
+          <include name="EndReport"/>
+        </methods>
+      </class> <!-- com.Hexagon.pom.testcases.MoneyMarket_EarlyMaturity_MultiCurrency.MM_Full_BackDate_ChangeINT -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
